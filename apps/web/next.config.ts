@@ -1,10 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   webpack: (cfg) => {
-    cfg.resolve.alias['react-native'] = 'react-native-web'
+    cfg.resolve.alias["react-native"] = "react-native-web"
     return cfg
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
