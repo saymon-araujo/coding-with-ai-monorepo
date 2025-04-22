@@ -1,84 +1,122 @@
-# Turborepo starter
+# Coding With AI
 
-This Turborepo starter is maintained by the Turborepo core team.
+A brief description of your project.
 
-## Using this example
+This monorepo contains the following applications and packages:
 
-Run the following command:
+## What's Inside?
+
+This Turborepo includes the following apps and packages:
+
+-   `apps/web`: A [Next.js](https://nextjs.org/) web application using Turbopack.
+-   `apps/mobile`: An [Expo](https://expo.dev/) (React Native) mobile application.
+-   `packages/ui`: Shared React components used by `web` and potentially `mobile`.
+-   `packages/tailwind-config`: Shared Tailwind CSS configuration.
+-   `@repo/eslint-config`: Shared ESLint configurations.
+-   `@repo/typescript-config`: Shared `tsconfig.json` configurations.
+
+All apps and packages are built using [TypeScript](https://www.typescriptlang.org/).
+
+## Setup
+
+Install dependencies using pnpm:
 
 ```sh
-npx create-turbo@latest
+pnpm install
 ```
 
-## What's inside?
+## Development
 
-This Turborepo includes the following packages/apps:
+This monorepo uses [Turborepo](https://turbo.build/) to manage tasks.
 
-### Apps and Packages
+### Running Both Apps
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+To start the development servers for both the web and mobile apps simultaneously:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```sh
 pnpm dev
 ```
 
-### Remote Caching
+This command might open the Expo Go app selector in your terminal for the mobile app. Follow the prompts to open the app on a simulator/emulator or physical device. The web app should be available at `http://localhost:3000` (or the next available port).
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+### Running Web App Only
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+To run only the Next.js web application:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```sh
+pnpm dev --filter=web
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Running Mobile App Only
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+To run only the Expo mobile application:
 
+```sh
+pnpm dev --filter=mobile
 ```
-npx turbo link
+
+This will start the Expo development server. You can then:
+- Press `a` to open on an Android emulator/device.
+- Press `i` to open on an iOS simulator/device.
+- Press `w` to open in a web browser (Expo for web).
+
+Alternatively, use the specific platform commands:
+
+```sh
+# Start mobile app and open on Android
+pnpm android --filter=mobile
+
+# Start mobile app and open on iOS
+pnpm ios --filter=mobile
+
+# Start mobile app and open in web browser
+pnpm web --filter=mobile
 ```
 
-## Useful Links
+## Build
 
-Learn more about the power of Turborepo:
+To build all apps and packages for production:
 
-- [Tasks](https://turbo.build/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/docs/reference/command-line-reference)
+```sh
+pnpm build
+```
+
+To build a specific app (e.g., `web`):
+
+```sh
+pnpm build --filter=web
+```
+
+## Linting
+
+To lint all apps and packages:
+
+```sh
+pnpm lint
+```
+
+To lint a specific app (e.g., `mobile`):
+
+```sh
+pnpm lint --filter=mobile
+```
+
+## Utilities
+
+This Turborepo includes:
+
+-   [TypeScript](https://www.typescriptlang.org/) for static type checking.
+-   [ESLint](https://eslint.org/) for code linting.
+-   [Prettier](https://prettier.io) for code formatting (usually integrated with ESLint).
+-   [Tailwind CSS](https://tailwindcss.com/) for styling, configured via `packages/tailwind-config`.
+
+## Turborepo: Useful Links
+
+Learn more about Turborepo:
+
+-   [Tasks](https://turbo.build/docs/core-concepts/monorepos/running-tasks)
+-   [Caching](https://turbo.build/docs/core-concepts/caching)
+-   [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching)
+-   [Filtering](https://turbo.build/docs/core-concepts/monorepos/filtering)
+-   [Configuration Options](https://turbo.build/docs/reference/configuration)
+-   [CLI Usage](https://turbo.build/docs/reference/command-line-reference)
