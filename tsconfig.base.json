@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@acme/ui/*": ["packages/ui/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
