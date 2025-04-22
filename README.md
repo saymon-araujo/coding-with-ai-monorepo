@@ -2,20 +2,17 @@
 
 A brief description of your project.
 
-This monorepo contains the following applications and packages:
+This monorepo contains the following applications:
 
 ## What's Inside?
 
-This Turborepo includes the following apps and packages:
+This Turborepo includes the following apps:
 
 -   `apps/web`: A [Next.js](https://nextjs.org/) web application using Turbopack.
 -   `apps/mobile`: An [Expo](https://expo.dev/) (React Native) mobile application.
--   `packages/ui`: Shared React components used by `web` and potentially `mobile`.
--   `packages/tailwind-config`: Shared Tailwind CSS configuration.
--   `@repo/eslint-config`: Shared ESLint configurations.
 -   `@repo/typescript-config`: Shared `tsconfig.json` configurations.
 
-All apps and packages are built using [TypeScript](https://www.typescriptlang.org/).
+All apps are built using [TypeScript](https://www.typescriptlang.org/).
 
 ## Setup
 
@@ -108,7 +105,7 @@ This Turborepo includes:
 -   [TypeScript](https://www.typescriptlang.org/) for static type checking.
 -   [ESLint](https://eslint.org/) for code linting.
 -   [Prettier](https://prettier.io) for code formatting (usually integrated with ESLint).
--   [Tailwind CSS](https://tailwindcss.com/) for styling, configured via `packages/tailwind-config`.
+-   [Tailwind CSS](https://tailwindcss.com/) for styling.
 
 ## Turborepo: Useful Links
 

@@ -1,3 +1,5 @@
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import Link from "next/link"
 
 export default function About() {
@@ -13,8 +15,12 @@ export default function About() {
 
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6 border-b pb-2">Project Overview</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Project Overview</CardTitle>
+            </CardHeader>
+            <CardContent>
               <p className="mb-4">
                 RoseBud UI is a carefully crafted Next.js starter template that combines the power of Next.js with the
                 flexibility of Tailwind CSS. It provides a solid foundation for building modern web applications with a
@@ -24,19 +30,25 @@ export default function About() {
                 This template includes a custom theme system, responsive design patterns, and a clean project structure
                 to help you get started quickly.
               </p>
-            </div>
-            <div className="bg-muted rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 border-b pb-2">Key Features</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Key Features</CardTitle>
+            </CardHeader>
+            <CardContent>
               <ul className="space-y-2 list-disc pl-5">
                 <li>Next.js App Router for modern routing</li>
                 <li>Tailwind CSS for utility-first styling</li>
                 <li>Custom theme with light/dark mode support</li>
                 <li>TypeScript for type safety</li>
-                <li>Optimized for performance</li>
-                <li>Clean and organized project structure</li>
               </ul>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </section>
 
         <section className="mb-16">
