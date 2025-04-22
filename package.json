@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "coding-with-ai",
   "private": true,
   "scripts": {
     "build": "turbo run build",
